@@ -13,7 +13,7 @@ class MainNavigationController: UINavigationController {
         super.viewDidLoad()
         
         let appereance = UINavigationBarAppearance()
-        appereance.backgroundColor = UIColor.white
+        appereance.backgroundColor = UIColor(named: "navigationBarBG")
         navigationBar.tintColor = UIColor(named: "navigationBarBuyIcon")
         navigationBar.standardAppearance = appereance
         navigationBar.compactAppearance = appereance
