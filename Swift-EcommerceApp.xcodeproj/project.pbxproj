@@ -56,6 +56,8 @@
 		C0A472962D368218008882C5 /* Swift-EcommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0A472AC2D379CA1008882C5 /* DATA */,
+				C0A472AB2D379C96008882C5 /* UI */,
 				C0A472972D368218008882C5 /* AppDelegate.swift */,
 				C0A472992D368218008882C5 /* SceneDelegate.swift */,
 				C0A4729B2D368218008882C5 /* ViewController.swift */,
@@ -65,6 +67,60 @@
 				C0A472A52D36821A008882C5 /* Info.plist */,
 			);
 			path = "Swift-EcommerceApp";
+			sourceTree = "<group>";
+		};
+		C0A472AB2D379C96008882C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C0A472B12D379CE5008882C5 /* Collectionview */,
+				C0A472B02D379CD0008882C5 /* ViewModel */,
+				C0A472AF2D379CC9008882C5 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C0A472AC2D379CA1008882C5 /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				C0A472AE2D379CB4008882C5 /* Models */,
+				C0A472AD2D379CAB008882C5 /* Repository */,
+			);
+			path = DATA;
+			sourceTree = "<group>";
+		};
+		C0A472AD2D379CAB008882C5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C0A472AE2D379CB4008882C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0A472AF2D379CC9008882C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0A472B02D379CD0008882C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0A472B12D379CE5008882C5 /* Collectionview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collectionview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
