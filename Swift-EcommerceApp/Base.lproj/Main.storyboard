@@ -8,23 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Homepage" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4RL-CJ-dUK"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4RL-CJ-dUK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="-1034"/>
         </scene>
-        <!--Item-->
+        <!--Wishlist-->
         <scene sceneID="pOj-Vc-vg8">
             <objects>
                 <viewController id="YUX-Ap-HOK" sceneMemberID="viewController">
@@ -34,16 +34,16 @@
                         <viewLayoutGuide key="safeArea" id="rya-Zh-UOG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mXb-j8-Juj"/>
+                    <tabBarItem key="tabBarItem" title="Wishlist" image="Heart" id="mXb-j8-Juj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSk-a3-Pea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="-381"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tabbar Controller-->
         <scene sceneID="0Hb-44-Z0r">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JC5-VB-3FE" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JC5-VB-3FE" customClass="MainTabbarController" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NNA-gg-fUq">
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="-57.251908396946561" y="-27.464788732394368"/>
         </scene>
-        <!--Item-->
+        <!--History-->
         <scene sceneID="XYI-W3-TYP">
             <objects>
                 <viewController id="Xxs-eV-V8M" sceneMemberID="viewController">
@@ -70,13 +70,13 @@
                         <viewLayoutGuide key="safeArea" id="4O0-Gk-lg2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="tes-A6-e4J"/>
+                    <tabBarItem key="tabBarItem" title="History" image="Paper" id="tes-A6-e4J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjX-N8-frw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="275"/>
         </scene>
-        <!--Item-->
+        <!--Account-->
         <scene sceneID="ZPq-Nm-OUI">
             <objects>
                 <viewController id="2Zw-xQ-Gmi" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="ye8-fy-WAj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nH6-a7-opY"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="Profile" id="nH6-a7-opY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stb-NQ-kwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,6 +94,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Heart" width="24" height="24"/>
+        <image name="Paper" width="20" height="24"/>
+        <image name="Profile" width="21" height="25"/>
+        <image name="house" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
