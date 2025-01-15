@@ -14,6 +14,7 @@
 		C0A472A42D36821A008882C5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C0A472A32D36821A008882C5 /* Base */; };
 		C0A472B32D37A144008882C5 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B22D37A144008882C5 /* Homepage.swift */; };
 		C0A472B62D37A375008882C5 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B52D37A375008882C5 /* MainTabbarController.swift */; };
+		C0A472B92D37AC0D008882C5 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B82D37AC0D008882C5 /* MainNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C0A472A52D36821A008882C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A472B22D37A144008882C5 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		C0A472B52D37A375008882C5 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
+		C0A472B82D37AC0D008882C5 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		C0A472AB2D379C96008882C5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C0A472B72D37ABF4008882C5 /* NavigationController */,
 				C0A472B42D37A332008882C5 /* TabbarController */,
 				C0A472B12D379CE5008882C5 /* Collectionview */,
 				C0A472B02D379CD0008882C5 /* ViewModel */,
@@ -132,6 +135,14 @@
 				C0A472B52D37A375008882C5 /* MainTabbarController.swift */,
 			);
 			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		C0A472B72D37ABF4008882C5 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C0A472B82D37AC0D008882C5 /* MainNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A472B92D37AC0D008882C5 /* MainNavigationController.swift in Sources */,
 				C0A472B32D37A144008882C5 /* Homepage.swift in Sources */,
 				C0A472982D368218008882C5 /* AppDelegate.swift in Sources */,
 				C0A472B62D37A375008882C5 /* MainTabbarController.swift in Sources */,

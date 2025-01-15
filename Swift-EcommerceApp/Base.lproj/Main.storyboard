@@ -3,12 +3,13 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Homepage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="Homepage" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,11 +19,46 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4RL-CJ-dUK"/>
+                    <navigationItem key="navigationItem" id="XoI-Ge-weW">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="1NS-o7-RfJ">
+                            <view key="customView" contentMode="scaleToFill" id="E6m-JL-6Uo">
+                                <rect key="frame" x="16" y="5" width="112" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ankara City, Central Turkey ˅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-DZ-LUh">
+                                        <rect key="frame" x="0.0" y="17" width="112" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Adress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bep-pp-r2C">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" name="navigationBarDelivery"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bep-pp-r2C" secondAttribute="trailing" id="E1R-nc-00h"/>
+                                    <constraint firstItem="bep-pp-r2C" firstAttribute="top" secondItem="E6m-JL-6Uo" secondAttribute="top" id="fTx-wz-qbj"/>
+                                    <constraint firstItem="bep-pp-r2C" firstAttribute="leading" secondItem="E6m-JL-6Uo" secondAttribute="leading" id="j94-C6-X87"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKL-DZ-LUh" secondAttribute="trailing" id="lbA-6S-Qjj"/>
+                                    <constraint firstAttribute="bottom" secondItem="BKL-DZ-LUh" secondAttribute="bottom" constant="5" id="pa5-9I-F2f"/>
+                                    <constraint firstItem="BKL-DZ-LUh" firstAttribute="leading" secondItem="E6m-JL-6Uo" secondAttribute="leading" id="uzq-jl-wJv"/>
+                                    <constraint firstItem="BKL-DZ-LUh" firstAttribute="top" secondItem="bep-pp-r2C" secondAttribute="bottom" constant="5" id="zJv-zn-kDy"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Notification" id="x3a-MD-aa7"/>
+                            <barButtonItem title="Item" image="Buy" id="17E-l8-cTG"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="-1034"/>
+            <point key="canvasLocation" x="1666.4122137404579" y="-1034.5070422535211"/>
         </scene>
         <!--Wishlist-->
         <scene sceneID="pOj-Vc-vg8">
@@ -50,7 +86,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="fSg-E8-C1A"/>
+                        <segue destination="fDx-SK-au1" kind="relationship" relationship="viewControllers" id="fSg-E8-C1A"/>
                         <segue destination="YUX-Ap-HOK" kind="relationship" relationship="viewControllers" id="y6W-1m-C0s"/>
                         <segue destination="Xxs-eV-V8M" kind="relationship" relationship="viewControllers" id="QYf-s8-qf0"/>
                         <segue destination="2Zw-xQ-Gmi" kind="relationship" relationship="viewControllers" id="iJu-9K-MPr"/>
@@ -92,12 +128,36 @@
             </objects>
             <point key="canvasLocation" x="740" y="942"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="IDO-0R-oSy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fDx-SK-au1" customClass="MainNavigationController" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="4RL-CJ-dUK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7gh-ai-GBF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5yE-EY-iK3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jrd-MZ-rGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739.69465648854964" y="-1034.5070422535211"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Buy" width="28" height="28"/>
         <image name="Heart" width="24" height="24"/>
+        <image name="Notification" width="28" height="28"/>
         <image name="Paper" width="20" height="24"/>
         <image name="Profile" width="21" height="25"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <namedColor name="navigationBarDelivery">
+            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
