@@ -13,11 +13,11 @@ class CategoriesCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    func setup(_ item:ListItem) {
+    func setup(_ item:MockData) {
         imageView.image = UIImage(named: item.image)
         titleLabel.text = item.title
-        imageView.layoutIfNeeded()
-        imageView.layer.cornerRadius = imageView.frame.height / 2
+        //imageView.layoutIfNeeded()
+        //imageView.layer.cornerRadius = imageView.frame.height / 3
     }
     
     

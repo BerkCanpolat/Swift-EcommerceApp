@@ -8,36 +8,23 @@
 import Foundation
 
 struct MockData {
-    static let shared = MockData()
-    
-    private let land: ListSection = {
-        .cartLanding([.init(title: "Bir", image: "one"),
-                      .init(title: "İki", image: "two"),
-                      .init(title: "Üç", image: "three"),
-                      .init(title: "Dört", image: "four"),
-                      .init(title: "Beş", image: "five")
-                     ])
-    }()
-    
-    private let cat: ListSection = {
-        .cartCategories([.init(title: "Bir", image: "one"),
-                      .init(title: "İki", image: "two"),
-                      .init(title: "Üç", image: "three"),
-                      .init(title: "Dört", image: "four"),
-                      .init(title: "Beş", image: "five")
-                     ])
-    }()
-    
-    private let prod: ListSection = {
-        .cartProduct([.init(title: "Bir", image: "one"),
-                      .init(title: "İki", image: "two"),
-                      .init(title: "Üç", image: "three"),
-                      .init(title: "Dört", image: "four"),
-                      .init(title: "Beş", image: "five")
-                     ])
-    }()
-    
-    var pageData:[ListSection] {
-        [land,cat,prod]
-    }
+    let title:String
+    let image:String
 }
+
+let mockLandingData = [
+    MockData(title: "Deneme 1", image: "one"),
+    MockData(title: "Deneme 2", image: "two"),
+    MockData(title: "Deneme 3", image: "three"),
+    MockData(title: "Deneme 4", image: "four"),
+    MockData(title: "Deneme 5", image: "five")
+]
+
+
+let mockCategoriesData = [
+    MockData(title: "Deneme 1", image: "one"),
+    MockData(title: "Deneme 2", image: "two"),
+    MockData(title: "Deneme 3", image: "three"),
+    MockData(title: "Deneme 4", image: "four"),
+    MockData(title: "Deneme 5", image: "five")
+]

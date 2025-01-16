@@ -14,8 +14,9 @@ class LandingCollectionCell: UICollectionViewCell {
     @IBOutlet weak var saleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
-    func setup(_ item:ListItem) {
+    func setup(_ item:MockData) {
         imageView.image = UIImage(named: item.image)
+        contentLabel.text = item.title
     }
     
 }

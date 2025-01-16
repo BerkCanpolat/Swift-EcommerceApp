@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProdCollectionCell: UICollectionViewCell {
     
@@ -14,8 +15,12 @@ class ProdCollectionCell: UICollectionViewCell {
     @IBOutlet weak var prodPrice: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     
-    func setup (_ item:ListItem) {
-        imageView.image = UIImage(named: item.image)
+    func setup (_ item:Foods) {
+        if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(item.yemek_resim_adi ?? "ayran.png")") {
+            imageView.kf.setImage(with: img)
+        }
+        prodName.text = item.yemek_adi
+        prodPrice.text = item.yemek_fiyat
         
     }
     

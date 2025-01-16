@@ -17,8 +17,8 @@ class Homepage: UIViewController {
     }
     @IBOutlet weak var searchBar: UISearchBar!
     
-    private let mockData = MockData.shared.pageData
-    
+    private var foods:[Foods] = []
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.collectionViewLayout = mainLayout()
@@ -105,18 +105,24 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return mockData.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockData[section].count
+        switch section {
+        case 0: return mockLandingData.count
+        case 1: return mockCategoriesData.count
+        case 2: return foods.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch mockData[indexPath.section] {
-        case .cartLanding(let item):
+        switch indexPath.section {
+        case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartLandingCell", for: indexPath) as! LandingCollectionCell
-            cell.setup(item[indexPath.row])
+            cell.setup(mockLandingData[indexPath.row])
             // Kart tasarımı
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor // Kenarlık rengi
@@ -125,16 +131,18 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
             cell.contentView.backgroundColor = UIColor.white // Arka plan rengi
             return cell
         
-        case .cartCategories(let item):
+        case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCategoriCell", for: indexPath) as! CategoriesCollectionCell
-            cell.setup(item[indexPath.row])
+            cell.setup(mockCategoriesData[indexPath.row])
             return cell
         
-        case .cartProduct(let item):
+        case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartProductCell", for: indexPath) as! ProdCollectionCell
-            cell.setup(item[indexPath.row])
+            cell.setup(foods[indexPath.row])
             
             return cell
+        default:
+            fatalError("Unexpected section")
         }
     }
     
