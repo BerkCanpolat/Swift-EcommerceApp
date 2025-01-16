@@ -192,13 +192,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7X-Ah-l10">
+                                            <rect key="frame" x="309" y="6" width="78" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="k3q-KY-O4J"/>
+                                                <constraint firstAttribute="width" constant="78" id="oeM-sQ-OSg"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="Filter"/>
+                                            <connections>
+                                                <action selector="filtersButton:" destination="0gC-lP-KNd" eventType="touchUpInside" id="sJo-G7-8oj"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="NYZ-Io-5bA" firstAttribute="top" secondItem="0gC-lP-KNd" secondAttribute="topMargin" id="1EF-wM-KNy"/>
+                                        <constraint firstItem="P7X-Ah-l10" firstAttribute="top" secondItem="0gC-lP-KNd" secondAttribute="top" constant="6" id="3dZ-Qe-vMH"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="NYZ-Io-5bA" secondAttribute="bottom" id="OCX-C4-5i9"/>
+                                        <constraint firstAttribute="bottom" secondItem="P7X-Ah-l10" secondAttribute="bottom" constant="5" id="ZLs-pR-6g9"/>
                                         <constraint firstItem="NYZ-Io-5bA" firstAttribute="leading" secondItem="0gC-lP-KNd" secondAttribute="leadingMargin" id="gel-jj-xFt"/>
+                                        <constraint firstAttribute="trailing" secondItem="P7X-Ah-l10" secondAttribute="trailing" constant="6" id="uf8-ua-KIo"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="filtersisHidden" destination="P7X-Ah-l10" id="996-Pg-6Lg"/>
                                         <outlet property="reusableLabel" destination="NYZ-Io-5bA" id="miG-S1-zO2"/>
                                     </connections>
                                 </collectionReusableView>
@@ -351,6 +367,7 @@
     </scenes>
     <resources>
         <image name="Buy" width="28" height="28"/>
+        <image name="Filter" width="12" height="13"/>
         <image name="Heart" width="24" height="24"/>
         <image name="Notification" width="28" height="28"/>
         <image name="Paper" width="20" height="24"/>

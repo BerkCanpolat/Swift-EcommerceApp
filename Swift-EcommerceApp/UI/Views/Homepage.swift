@@ -70,6 +70,7 @@ class Homepage: UIViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [createSuplementaryHeader()]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
         return section
     }
     
@@ -85,6 +86,7 @@ class Homepage: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
         section.boundarySupplementaryItems = [createSuplementaryHeader()]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 0)
         return section
     }
     
@@ -97,7 +99,11 @@ class Homepage: UIViewController {
 
 }
 
-extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource {
+extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, FiltersReusableProtocol {
+    func filtersFunction(index: IndexPath) {
+        print("Oldu mu la gardas")
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return mockData.count
     }
@@ -138,11 +144,13 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource {
             let layout = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HomeReusableCell", for: indexPath) as! HomeReusableCell
             switch indexPath.section {
             case 0:
-                layout.setup("")
+                layout.setup("", showButton: true)
             case 1:
-                layout.setup("Category")
+                layout.setup("Category", showButton: true)
             case 2:
-                layout.setup("Recent Product")
+                layout.setup("Recent Product", showButton: false)
+                layout.reusableIndexPath = indexPath
+                layout.reusableFiltersProtocol = self
             default:
                 layout.setup("Geçersiz")
             }
