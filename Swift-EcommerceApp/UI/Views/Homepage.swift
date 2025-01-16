@@ -18,10 +18,18 @@ class Homepage: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     private var foods:[Foods] = []
+    private var homeViewModel = HomePageViewModel()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.collectionViewLayout = mainLayout()
+        
+        _ = homeViewModel.foodList.subscribe(onNext: { foodsViewModel in
+            self.foods = foodsViewModel
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     private func mainLayout() -> UICollectionViewCompositionalLayout {
@@ -78,15 +86,15 @@ class Homepage: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(170))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item,item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
         section.boundarySupplementaryItems = [createSuplementaryHeader()]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 0, trailing: 20)
         return section
     }
     
@@ -167,4 +175,5 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
             return UICollectionReusableView()
         }
     }
+
 }

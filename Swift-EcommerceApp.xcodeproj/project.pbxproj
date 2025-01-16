@@ -15,7 +15,6 @@
 		C0A472B32D37A144008882C5 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B22D37A144008882C5 /* Homepage.swift */; };
 		C0A472B62D37A375008882C5 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B52D37A375008882C5 /* MainTabbarController.swift */; };
 		C0A472B92D37AC0D008882C5 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472B82D37AC0D008882C5 /* MainNavigationController.swift */; };
-		C0A472BD2D37FAC9008882C5 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472BC2D37FAC9008882C5 /* ListItem.swift */; };
 		C0A472C12D37FADF008882C5 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472C02D37FADF008882C5 /* MockData.swift */; };
 		C0A472C32D37FCF6008882C5 /* LandingCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472C22D37FCF6008882C5 /* LandingCollectionCell.swift */; };
 		C0A472C52D37FD0C008882C5 /* CategoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472C42D37FD0C008882C5 /* CategoriesCollectionCell.swift */; };
@@ -24,8 +23,9 @@
 		C0A472CB2D38FD0A008882C5 /* FoodModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472CA2D38FD0A008882C5 /* FoodModels.swift */; };
 		C0A472DA2D390681008882C5 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C0A472D92D390681008882C5 /* RxSwift */; };
 		C0A472E32D390698008882C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0A472E22D390698008882C5 /* Alamofire */; };
-		C0A472E52D390698008882C5 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C0A472E42D390698008882C5 /* AlamofireDynamic */; };
 		C0A472E82D3906A4008882C5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C0A472E72D3906A4008882C5 /* Kingfisher */; };
+		C0A472EA2D390904008882C5 /* FoodsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472E92D390904008882C5 /* FoodsRepository.swift */; };
+		C0A472EC2D390BCF008882C5 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A472EB2D390BCF008882C5 /* HomePageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +39,14 @@
 		C0A472B22D37A144008882C5 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		C0A472B52D37A375008882C5 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		C0A472B82D37AC0D008882C5 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		C0A472BC2D37FAC9008882C5 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		C0A472C02D37FADF008882C5 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		C0A472C22D37FCF6008882C5 /* LandingCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingCollectionCell.swift; sourceTree = "<group>"; };
 		C0A472C42D37FD0C008882C5 /* CategoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionCell.swift; sourceTree = "<group>"; };
 		C0A472C62D37FD16008882C5 /* ProdCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdCollectionCell.swift; sourceTree = "<group>"; };
 		C0A472C82D37FD63008882C5 /* HomeReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReusableCell.swift; sourceTree = "<group>"; };
 		C0A472CA2D38FD0A008882C5 /* FoodModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModels.swift; sourceTree = "<group>"; };
+		C0A472E92D390904008882C5 /* FoodsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsRepository.swift; sourceTree = "<group>"; };
+		C0A472EB2D390BCF008882C5 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +56,6 @@
 			files = (
 				C0A472E82D3906A4008882C5 /* Kingfisher in Frameworks */,
 				C0A472DA2D390681008882C5 /* RxSwift in Frameworks */,
-				C0A472E52D390698008882C5 /* AlamofireDynamic in Frameworks */,
 				C0A472E32D390698008882C5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +118,7 @@
 		C0A472AD2D379CAB008882C5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C0A472E92D390904008882C5 /* FoodsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -125,7 +126,6 @@
 		C0A472AE2D379CB4008882C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C0A472BC2D37FAC9008882C5 /* ListItem.swift */,
 				C0A472C02D37FADF008882C5 /* MockData.swift */,
 				C0A472CA2D38FD0A008882C5 /* FoodModels.swift */,
 			);
@@ -143,6 +143,7 @@
 		C0A472B02D379CD0008882C5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0A472EB2D390BCF008882C5 /* HomePageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,7 +194,6 @@
 			packageProductDependencies = (
 				C0A472D92D390681008882C5 /* RxSwift */,
 				C0A472E22D390698008882C5 /* Alamofire */,
-				C0A472E42D390698008882C5 /* AlamofireDynamic */,
 				C0A472E72D3906A4008882C5 /* Kingfisher */,
 			);
 			productName = "Swift-EcommerceApp";
@@ -258,12 +258,13 @@
 			files = (
 				C0A472C72D37FD16008882C5 /* ProdCollectionCell.swift in Sources */,
 				C0A472C32D37FCF6008882C5 /* LandingCollectionCell.swift in Sources */,
-				C0A472BD2D37FAC9008882C5 /* ListItem.swift in Sources */,
 				C0A472B92D37AC0D008882C5 /* MainNavigationController.swift in Sources */,
 				C0A472B32D37A144008882C5 /* Homepage.swift in Sources */,
+				C0A472EC2D390BCF008882C5 /* HomePageViewModel.swift in Sources */,
 				C0A472C92D37FD63008882C5 /* HomeReusableCell.swift in Sources */,
 				C0A472982D368218008882C5 /* AppDelegate.swift in Sources */,
 				C0A472C52D37FD0C008882C5 /* CategoriesCollectionCell.swift in Sources */,
+				C0A472EA2D390904008882C5 /* FoodsRepository.swift in Sources */,
 				C0A472CB2D38FD0A008882C5 /* FoodModels.swift in Sources */,
 				C0A472B62D37A375008882C5 /* MainTabbarController.swift in Sources */,
 				C0A472C12D37FADF008882C5 /* MockData.swift in Sources */,
@@ -528,11 +529,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C0A472E12D390698008882C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		C0A472E42D390698008882C5 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C0A472E12D390698008882C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		C0A472E72D3906A4008882C5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
