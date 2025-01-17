@@ -489,11 +489,17 @@
                                             </collectionView>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7LK-Ag-Gx4">
                                                 <rect key="frame" x="289" y="634" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="foodStepperButton:" destination="QwF-uB-g2J" eventType="valueChanged" id="K2G-lb-5Hh"/>
+                                                </connections>
                                             </stepper>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrV-65-fiN">
-                                                <rect key="frame" x="10" y="631" width="75" height="35"/>
+                                                <rect key="frame" x="10" y="631" width="114" height="35"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Sepete Ekle"/>
+                                                <connections>
+                                                    <action selector="foodAddBasketButton:" destination="QwF-uB-g2J" eventType="touchUpInside" id="xRG-GN-MjS"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNk-L2-OyT">
                                                 <rect key="frame" x="266.66666666666669" y="637" width="12.333333333333314" height="24"/>
@@ -588,7 +594,9 @@
                         <outlet property="collectionView" destination="Xlv-yT-tdz" id="QA3-sH-aR6"/>
                         <outlet property="foodName" destination="0Wb-xO-DS4" id="FLb-pL-eMH"/>
                         <outlet property="foodPrice" destination="kx7-Xg-tWO" id="8fH-9s-iTu"/>
+                        <outlet property="foodQuantitiyLabel" destination="MNk-L2-OyT" id="V0J-iu-to3"/>
                         <outlet property="imageView" destination="COH-0n-tyC" id="4jY-cg-2ST"/>
+                        <outlet property="stepperOutlet" destination="7LK-Ag-Gx4" id="UhZ-a2-e28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXD-kf-Jms" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

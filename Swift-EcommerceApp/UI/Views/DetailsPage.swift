@@ -18,6 +18,12 @@ class DetailsPage: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
+    
+    
+    @IBOutlet weak var foodQuantitiyLabel: UILabel!
+    
+    @IBOutlet weak var stepperOutlet: UIStepper!
+    
         
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -31,6 +37,8 @@ class DetailsPage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         if let f = deneme {
             self.navigationItem.title = f.yemek_adi
@@ -81,7 +89,39 @@ class DetailsPage: UIViewController {
     
     @IBAction func foodFavoriteButton(_ sender: Any) {
     }
-
+    
+    
+    @IBAction func foodAddBasketButton(_ sender: Any) {
+        let alertController = UIAlertController(title: "Sepete Eklensin Mi?", message: "\(deneme?.yemek_adi ?? "") - \(deneme?.yemek_fiyat ?? "")", preferredStyle: .alert)
+        
+        let alertOkButton = UIAlertAction(title: "Ok", style: .default) { _ in
+            print("Ok basıldı")
+            
+            let alertControllerTwo = UIAlertController(title: "Sepete Eklendi!", message: "Ürününüz sepete eklenmiştir. Lütfen sepetinizi kontrol edin.", preferredStyle: .alert)
+            
+            let alertOKBasketButton = UIAlertAction(title: "OK", style: .destructive) {_ in
+            }
+            
+            alertControllerTwo.addAction(alertOKBasketButton)
+            self.present(alertControllerTwo, animated: true)
+            
+        }
+        
+        let alertCancelButton = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+            print("Cancela basıldı")
+        }
+        
+        alertController.addAction(alertOkButton)
+        alertController.addAction(alertCancelButton)
+        
+        present(alertController, animated: true)
+    }
+    
+    
+    @IBAction func foodStepperButton(_ sender: UIStepper) {
+        foodQuantitiyLabel.text = String(Int(sender.value))
+    }
+    
 }
 
 

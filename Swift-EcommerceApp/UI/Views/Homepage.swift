@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class Homepage: UIViewController {
     
@@ -16,6 +17,8 @@ class Homepage: UIViewController {
         }
     }
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    private let disposeBag = DisposeBag()
     
     private var foods:[Foods] = []
     private var homeViewModel = HomePageViewModel()
@@ -29,7 +32,11 @@ class Homepage: UIViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-        })
+        }).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func mainLayout() -> UICollectionViewCompositionalLayout {
@@ -120,6 +127,7 @@ class Homepage: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.tabBarController?.tabBar.isHidden = true
         if segue.identifier == "detailsPage" {
             if let indeks = sender as? Foods {
                 let gidilecekVC = segue.destination as! DetailsPage
