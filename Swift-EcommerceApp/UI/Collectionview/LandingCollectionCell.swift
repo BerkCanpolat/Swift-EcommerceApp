@@ -21,7 +21,7 @@ class LandingCollectionCell: UICollectionViewCell {
         let randomColor = UIColor(
                 hue: CGFloat(drand48()),
                 saturation: 0.5, // Daha pastel tonlar için doygunluğu azaltabilirsiniz
-                brightness: 0.8,
+                brightness: 1,
                 alpha: 0.5 // Şeffaflık
             )
         imageView.backgroundColor = randomColor

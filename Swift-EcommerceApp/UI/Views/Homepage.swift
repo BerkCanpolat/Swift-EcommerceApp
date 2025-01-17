@@ -102,6 +102,22 @@ class Homepage: UIViewController {
         .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
     
+    
+    
+    private func sortFoodsByPrice() {
+        foods.sort { (food1, food2) -> Bool in
+            guard let price1 = Int(food1.yemek_fiyat ?? "0"),
+                  let price2 = Int(food2.yemek_fiyat ?? "0") else { return false }
+            return price1 < price2
+        }
+    }
+
+    private func sortFoodsAlphabetically() {
+        foods.sort { (food1, food2) -> Bool in
+            return (food1.yemek_adi ?? "").localizedCaseInsensitiveCompare(food2.yemek_adi ?? "") == .orderedAscending
+        }
+    }
+    
 
     
 
@@ -109,7 +125,24 @@ class Homepage: UIViewController {
 
 extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, FiltersReusableProtocol {
     func filtersFunction(index: IndexPath) {
-        print("Oldu mu la gardas")
+        let alertController = UIAlertController(title: "Filters Options", message: nil, preferredStyle: .actionSheet)
+        
+        let alertPriceSort = UIAlertAction(title: "Fiyata Göre Sırala", style: .default) { _ in
+            self.sortFoodsByPrice()
+                   self.collectionView.reloadData()
+        }
+        
+        let alphabeticSort = UIAlertAction(title: "Alfabeye Göre Sırala", style: .default) { _ in
+            self.sortFoodsAlphabetically()
+                    self.collectionView.reloadData()
+        }
+        
+        let alertCancel = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
+        
+        alertController.addAction(alertPriceSort)
+        alertController.addAction(alphabeticSort)
+        alertController.addAction(alertCancel)
+        present(alertController, animated: true)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

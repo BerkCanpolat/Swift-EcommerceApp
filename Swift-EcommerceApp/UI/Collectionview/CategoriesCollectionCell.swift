@@ -17,7 +17,7 @@ class CategoriesCollectionCell: UICollectionViewCell {
         let randomColor = UIColor(
                 hue: CGFloat(drand48()),
                 saturation: 0.6, // Daha pastel tonlar için doygunluğu azaltabilirsiniz
-                brightness: 0.8,
+                brightness: 1,
                 alpha: 0.6 // Şeffaflık
             )
         imageView.backgroundColor = randomColor
