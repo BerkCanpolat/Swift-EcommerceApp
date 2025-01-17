@@ -65,14 +65,14 @@ class Homepage: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         section.boundarySupplementaryItems = [createSuplementaryHeader()]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 20, trailing: 0)
         return section
     }
     
     private func createdSecondSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
+                
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
@@ -86,7 +86,7 @@ class Homepage: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(170))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item,item])
@@ -94,7 +94,7 @@ class Homepage: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 10
         section.boundarySupplementaryItems = [createSuplementaryHeader()]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 0)
         return section
     }
     
@@ -135,8 +135,19 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor // Kenarlık rengi
             cell.layer.cornerRadius = 10 // Yuvarlatılmış köşeler
-            cell.layer.masksToBounds = true // Taşan içeriği kes
-            cell.contentView.backgroundColor = UIColor.white // Arka plan rengi
+            cell.layer.masksToBounds = false // Taşan içeriği kes
+            //cell.contentView.backgroundColor = UIColor(named: "backGround") // Arka plan rengi
+            
+            // Gölge ekleme
+                    cell.layer.shadowColor = UIColor.blue.cgColor // Gölgenin rengi
+                    cell.layer.shadowOpacity = 0.2 // Gölgenin opaklığı (0.0 ile 1.0 arasında)
+                    cell.layer.shadowOffset = CGSize(width: 0, height: 2) // Gölgenin konumu
+                    cell.layer.shadowRadius = 5 // Gölgenin bulanıklık yarıçapı
+            
+            // İçerik arka planı (gölgeye etki etmez)
+                    cell.contentView.layer.cornerRadius = 10
+            cell.contentView.backgroundColor = UIColor.white
+            
             return cell
         
         case 1:
