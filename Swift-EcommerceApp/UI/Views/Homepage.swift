@@ -118,6 +118,16 @@ class Homepage: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsPage" {
+            if let indeks = sender as? Foods {
+                let gidilecekVC = segue.destination as! DetailsPage
+                gidilecekVC.deneme = indeks
+            }
+        }
+    }
+    
 
     
 
@@ -129,12 +139,12 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
         
         let alertPriceSort = UIAlertAction(title: "Fiyata Göre Sırala", style: .default) { _ in
             self.sortFoodsByPrice()
-                   self.collectionView.reloadData()
+            self.collectionView.reloadData()
         }
         
         let alphabeticSort = UIAlertAction(title: "Alfabeye Göre Sırala", style: .default) { _ in
             self.sortFoodsAlphabetically()
-                    self.collectionView.reloadData()
+            self.collectionView.reloadData()
         }
         
         let alertCancel = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
@@ -218,6 +228,13 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
         default:
             return UICollectionReusableView()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.tabBarController?.tabBar.isHidden = true
+        let foodsIndex = foods[indexPath.row]
+        performSegue(withIdentifier: "detailsPage", sender: foodsIndex)
+        print("Üstüne bsaıldı")
     }
 
 }
