@@ -20,7 +20,7 @@ class ProdCollectionCell: UICollectionViewCell {
             imageView.kf.setImage(with: img)
         }
         prodName.text = item.yemek_adi
-        prodPrice.text = item.yemek_fiyat
+        prodPrice.text = "₺ \(item.yemek_fiyat ?? "")"
         
     }
     

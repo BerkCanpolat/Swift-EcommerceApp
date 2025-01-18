@@ -24,6 +24,9 @@ class DetailsPage: UIViewController {
     
     @IBOutlet weak var stepperOutlet: UIStepper!
     
+    
+    @IBOutlet weak var basketAction: UIButton!
+    
         
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -41,7 +44,7 @@ class DetailsPage: UIViewController {
         
 
         if let f = deneme {
-            self.navigationItem.title = f.yemek_adi
+            self.navigationItem.title = "Ürün Detayları"
             if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(f.yemek_resim_adi ?? "ayran.png")") {
                 imageView.kf.setImage(with: img)
             }
@@ -58,6 +61,8 @@ class DetailsPage: UIViewController {
         })
         
         collectionView.collectionViewLayout = createCompositionalLayout()
+        
+        basketAction.tintColor = UIColor(named: "buttonBasket")
         
     }
     
