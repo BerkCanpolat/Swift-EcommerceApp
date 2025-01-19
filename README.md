@@ -72,6 +72,13 @@ Bu proje, modern teknolojiler ve araçlar kullanarak zengin özelliklere sahip, 
 <img width="483" alt="2" src="https://github.com/user-attachments/assets/0b4a317e-b674-41b5-8a7c-e237b22cfbe4" />
 
 
+<img width="483" alt="3" src="https://github.com/user-attachments/assets/f5129168-ae37-40d3-8976-0f19358019cb" />
+<img width="483" alt="4" src="https://github.com/user-attachments/assets/70f051e8-d17b-4c05-8444-d357c31317cb" />
+
+
+
+
+
 
 
 
