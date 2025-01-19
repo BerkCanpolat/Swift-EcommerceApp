@@ -184,18 +184,15 @@ extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, Filter
             cell.setup(mockLandingData[indexPath.row])
             // Kart tasarımı
             cell.layer.borderWidth = 0.5
-            cell.layer.borderColor = UIColor.lightGray.cgColor // Kenarlık rengi
-            cell.layer.cornerRadius = 10 // Yuvarlatılmış köşeler
-            cell.layer.masksToBounds = false // Taşan içeriği kes
-            //cell.contentView.backgroundColor = UIColor(named: "backGround") // Arka plan rengi
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = false
             
-            // Gölge ekleme
-                    cell.layer.shadowColor = UIColor.blue.cgColor // Gölgenin rengi
-                    cell.layer.shadowOpacity = 0.2 // Gölgenin opaklığı (0.0 ile 1.0 arasında)
-                    cell.layer.shadowOffset = CGSize(width: 0, height: 2) // Gölgenin konumu
-                    cell.layer.shadowRadius = 5 // Gölgenin bulanıklık yarıçapı
+                    cell.layer.shadowColor = UIColor.blue.cgColor
+                    cell.layer.shadowOpacity = 0.2
+                    cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+                    cell.layer.shadowRadius = 5
             
-            // İçerik arka planı (gölgeye etki etmez)
                     cell.contentView.layer.cornerRadius = 10
             cell.contentView.backgroundColor = UIColor.white
             

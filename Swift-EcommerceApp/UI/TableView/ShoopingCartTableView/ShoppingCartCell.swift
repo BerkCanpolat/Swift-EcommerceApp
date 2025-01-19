@@ -54,15 +54,13 @@ class ShoppingCartCell: UITableViewCell {
     
     
     @IBAction func foodSelectedButton(_ sender: UIButton) {
-        // Butonun seçili durumunu değiştir
             sender.isSelected.toggle()
 
-            // Seçili durumuna göre renk ve simge değiştir
             if sender.isSelected {
-                sender.tintColor = UIColor(named: "buttonBasket") // Yeşil renk
+                sender.tintColor = UIColor(named: "buttonBasket")
                 sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
             } else {
-                sender.tintColor = UIColor.gray // Gri renk
+                sender.tintColor = UIColor.gray
                 sender.setImage(UIImage(systemName: "circle"), for: .normal)
             }
     }

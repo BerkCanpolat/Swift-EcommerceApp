@@ -51,33 +51,30 @@ class FoodsRepository {
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post, parameters: parametre).response { response in
             guard let data = response.data else {
                 print("GUARDA GİRİLDİ.")
-                self.foodBasket.onNext([FoodBasketModels]()) // Boş liste dönüyoruz
+                self.foodBasket.onNext([FoodBasketModels]())
                 return
             }
             
-            // Raw JSON yanıtını yazdırmak
             print("Raw JSON Response: \(String(data: data, encoding: .utf8) ?? "No Data")")
             
-            // Eğer data boşsa veya geçerli bir JSON değilse
             if data.isEmpty || (String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true) {
                 print("Json boş veya geçersiz")
-                self.foodBasket.onNext([FoodBasketModels]()) // Boş liste dönüyoruz
+                self.foodBasket.onNext([FoodBasketModels]())
                 return
             }
             
-            // Eğer geçerli bir JSON ise, çözümleme işlemi
             do {
                 let getFoodBasket = try JSONDecoder().decode(FoodBasketAnswerModel.self, from: data)
                 if let basketFoodGet = getFoodBasket.sepet_yemekler, !basketFoodGet.isEmpty {
-                    self.foodBasket.onNext(basketFoodGet) // Sepet yemekleri varsa gönder
+                    self.foodBasket.onNext(basketFoodGet)
                 } else {
                     print("Sepet boş")
-                    self.foodBasket.onNext([FoodBasketModels]()) // Sepet boşsa boş liste dönüyoruz
+                    self.foodBasket.onNext([FoodBasketModels]())
                 }
             } catch {
                 print("Sepetteki yemekler getirilemedi")
                 print("JSON Decode Error: \(error.localizedDescription)")
-                self.foodBasket.onNext([FoodBasketModels]()) // Hata durumunda boş liste dönüyoruz
+                self.foodBasket.onNext([FoodBasketModels]())
             }
         }
     }

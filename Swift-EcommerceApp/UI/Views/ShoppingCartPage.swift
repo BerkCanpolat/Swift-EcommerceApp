@@ -46,14 +46,12 @@ class ShoppingCartPage: UIViewController {
     func updateTotalPrice() {
         var totalPrice: Double = 0
         
-        // Sepetteki her ürün için fiyat ve adet bilgilerini alarak toplamı hesapla
         for food in foodBasketModel {
             if let price = Double(food.yemek_fiyat), let quantity = Int(food.yemek_siparis_adet) {
                 totalPrice += price * Double(quantity)
             }
         }
         
-        // Toplam fiyatı UI'ya yansıt
         foodTotalPriceLabel.text = "₺ \(String(format: "%.2f", totalPrice))"
     }
 
@@ -64,22 +62,17 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, Protocol
     func foodQuantitiyPlusPro(indexPath: IndexPath, quantity: Int) {
         print("Plus Basıldı")
             
-            // Sepetteki ürünü buluyoruz
             let food = foodBasketModel[indexPath.row]
             
-            // Yemek adedi String olduğundan, önce Int'e dönüştürmeliyiz
             if let adet = Int(food.yemek_siparis_adet) {
-                food.yemek_siparis_adet = "\(adet + 1)" // Adedi 1 arttır
+                food.yemek_siparis_adet = "\(adet + 1)"
                 
-                // Yeni adet değerini UI'ya yansıtalım
                 if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
                     cell.foodQuantitiyLabel.text = "Quantity: \(food.yemek_siparis_adet)"
                 }
                 
-                // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)
                 foodBasketModel[indexPath.row] = food
                 
-                // Sepet verisini güncellemek için backend'e veya ViewModel'e bildirim gönder
                 if let yeniAdet = Int(food.yemek_siparis_adet) {
                     shoppingViewModel.updateFoodQuantityInBasket(sepet_yemek_id: Int(food.sepet_yemek_id) ?? 0, yeni_adet: yeniAdet)
                 }
@@ -91,22 +84,17 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, Protocol
     func foodQuantitiyMinusPro(indexPath: IndexPath, quantity: Int) {
         print("Minus Basıldı")
             
-            // Sepetteki ürünü buluyoruz
             let food = foodBasketModel[indexPath.row]
             
-            // Yemek adedi String olduğundan, önce Int'e dönüştürmeliyiz
             if let adet = Int(food.yemek_siparis_adet), adet > 1 {
-                food.yemek_siparis_adet = "\(adet - 1)" // Adedi 1 azalt
+                food.yemek_siparis_adet = "\(adet - 1)"
                 
-                // Yeni adet değerini UI'ya yansıtalım
                 if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
                     cell.foodQuantitiyLabel.text = "Quantity: \(food.yemek_siparis_adet)"
                 }
                 
-                // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)
                 foodBasketModel[indexPath.row] = food
                 
-                // Sepet verisini güncellemek için backend'e veya ViewModel'e bildirim gönder
                 if let yeniAdet = Int(food.yemek_siparis_adet) {
                     shoppingViewModel.updateFoodQuantityInBasket(sepet_yemek_id: Int(food.sepet_yemek_id) ?? 0, yeni_adet: yeniAdet)
                 }

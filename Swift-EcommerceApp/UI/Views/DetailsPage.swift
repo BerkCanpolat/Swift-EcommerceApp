@@ -61,40 +61,32 @@ class DetailsPage: UIViewController {
             }
         }).disposed(by: disposeBage)
         
-        /// DetailsViewModel
-        
-        
         collectionView.collectionViewLayout = createCompositionalLayout()
         
         basketAction.tintColor = UIColor(named: "buttonBasket")
         
-        stepperOutlet.minimumValue = 1 // Minimum sipariş adedi
-            stepperOutlet.maximumValue = 20 // Maksimum sipariş adedi
-            stepperOutlet.value = 1 // Varsayılan değer
-            foodQuantitiyLabel.text = "\(Int(stepperOutlet.value))" // Varsayılan olarak 1 gösterilir
+        stepperOutlet.minimumValue = 1
+            stepperOutlet.maximumValue = 20
+            stepperOutlet.value = 1
+            foodQuantitiyLabel.text = "\(Int(stepperOutlet.value))"
         
     }
     
        private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
            return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
                
-               // Hücre boyutu (widthFraction ve heightFraction ayarlanır)
                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1))
                let item = NSCollectionLayoutItem(layoutSize: itemSize)
                
-               // Hücreler arası boşluk
                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
                
-               // Grup boyutu (yatay bir grup oluşturulur)
                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(75))
                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                
-               // Grup içindeki öğeler arası mesafe
                group.interItemSpacing = .fixed(10)
                
-               // Bölüm
                let section = NSCollectionLayoutSection(group: group)
-               section.orthogonalScrollingBehavior = .continuous // Yatay kaydırma
+               section.orthogonalScrollingBehavior = .continuous
                
                return section
            }
