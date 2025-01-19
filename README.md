@@ -20,10 +20,23 @@ TÜRKÇE AÇIKLAMA
 Bu proje, Swift kullanılarak UIKit Storyboard ile geliştirilmiş bir e-ticaret mobil uygulamasıdır. Uygulama, kullanıcı deneyimini en üst düzeye çıkarmak için MVVM mimarisini benimsemekte ve RxSwift ile Alamofire gibi teknolojilerden yararlanmaktadır.
 
 Özellikler:
+
 Ürün Görüntüleme: Kullanıcılar, yemeklerin listesini görüntüleyebilir ve her biri hakkında detaylı bilgi alabilir.
+
+
 Ürün Detayları: Ürün açıklamaları, kullanıcı yorumları ve benzer ürün önerilerine ulaşabilir.
+
+
 Sepete Ekleme: Kullanıcılar yemek ürünlerini sepete ekleyebilir, adetlerini ayarlayabilir ve silebilir.
+
+
 Sepet Yönetimi: Sepetteki ürünlerin toplam fiyatını ve adetlerini görüntüleyebilir.
+
+
 Modern UI Tasarımı: Figma tasarımları temel alınarak temiz ve kullanıcı dostu bir arayüz sunulmuştur.
+
+
 Görev Yönetimi: Geliştirme süreci, Trello kullanılarak organize edilmiştir.
+
+
 Bu proje, modern teknolojiler ve araçlar kullanarak zengin özelliklere sahip, sezgisel ve akıcı bir kullanıcı deneyimi sunmayı amaçlamaktadır.
