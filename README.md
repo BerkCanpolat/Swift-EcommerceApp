@@ -35,6 +35,8 @@ Figma: https://www.figma.com/design/1CxH3wJzisoJKQERUzlRdr/E-Commerce-App---UI-K
 
 
 
+
+
 TÜRKÇE AÇIKLAMA
 
 Bu proje, Swift kullanılarak UIKit Storyboard ile geliştirilmiş bir e-ticaret mobil uygulamasıdır. Uygulama, kullanıcı deneyimini en üst düzeye çıkarmak için MVVM mimarisini benimsemekte ve RxSwift ile Alamofire gibi teknolojilerden yararlanmaktadır.
@@ -76,7 +78,7 @@ Bu proje, modern teknolojiler ve araçlar kullanarak zengin özelliklere sahip, 
 <img width="483" alt="4" src="https://github.com/user-attachments/assets/70f051e8-d17b-4c05-8444-d357c31317cb" />
 
 <img width="483" alt="5" src="https://github.com/user-attachments/assets/f4d26cd9-0f7b-4983-849c-6cc7279f72a8" />
-
+https://github.com/user-attachments/assets/aa88a371-4915-47e7-9ddf-90bf432e196d
 
 
 
