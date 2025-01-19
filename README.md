@@ -26,6 +26,8 @@ Task Management: Development workflow was organized and managed using Trello.
 
 This project demonstrates the integration of modern technologies and tools in mobile application development, focusing on delivering a smooth, intuitive, and feature-rich user experience.
 
+Figma: https://www.figma.com/design/1CxH3wJzisoJKQERUzlRdr/E-Commerce-App---UI-KIT-(Community)?node-id=0-1&p=f&t=nIl3J6AOkmTecV9p-0
+
 
 
 TÜRKÇE AÇIKLAMA
@@ -50,6 +52,8 @@ Modern UI Tasarımı: Figma tasarımları temel alınarak temiz ve kullanıcı d
 
 
 Görev Yönetimi: Geliştirme süreci, Trello kullanılarak organize edilmiştir.
+
+Figma: https://www.figma.com/design/1CxH3wJzisoJKQERUzlRdr/E-Commerce-App---UI-KIT-(Community)?node-id=0-1&p=f&t=nIl3J6AOkmTecV9p-0
 
 
 Bu proje, modern teknolojiler ve araçlar kullanarak zengin özelliklere sahip, sezgisel ve akıcı bir kullanıcı deneyimi sunmayı amaçlamaktadır.
