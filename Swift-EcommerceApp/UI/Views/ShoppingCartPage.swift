@@ -22,7 +22,6 @@ class ShoppingCartPage: UIViewController {
     }
     
     var foodBasketModel = [FoodBasketModels]()
-    var f: FoodBasketModels?
     let shoppingViewModel = ShoppingCardViewModel()
     private let disposeBag = DisposeBag()
     
@@ -40,16 +39,18 @@ class ShoppingCartPage: UIViewController {
         
     }
     
-    
-    
     @IBAction func selectPaymentMethodButton(_ sender: UIButton) {
     }
-    
-    
 
 }
 
-extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource {
+extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, ProtocolFoodDelete {
+    func foodDeletePro(indexPath: IndexPath) {
+        print("Basıldı")
+        let foodIndex = foodBasketModel[indexPath.row]
+        shoppingViewModel.foodBasketDeleteViewModel(sepet_yemek_id: Int(foodIndex.sepet_yemek_id) ?? 0, kullanici_adi: "berk_canpolat")
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -62,6 +63,9 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell", for: indexPath) as! ShoppingCartCell
         cell.setup(foodBasketModel[indexPath.row])
         cell.selectionStyle = .none
+        
+        cell.tableViewIndex = indexPath
+        cell.tableViewPro = self
         return cell
     }
 }

@@ -49,18 +49,50 @@ class FoodsRepository {
     func foodsBasketGet(kullanici_adi:String) {
         let parametre:Parameters = ["kullanici_adi":kullanici_adi]
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post, parameters: parametre).response { response in
+            guard let data = response.data else {
+                print("GUARDA GİRİLDİ.")
+                self.foodBasket.onNext([FoodBasketModels]()) // Boş liste dönüyoruz
+                return
+            }
+            
+            // Raw JSON yanıtını yazdırmak
+            print("Raw JSON Response: \(String(data: data, encoding: .utf8) ?? "No Data")")
+            
+            // Eğer data boşsa veya geçerli bir JSON değilse
+            if data.isEmpty || (String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true) {
+                print("Json boş veya geçersiz")
+                self.foodBasket.onNext([FoodBasketModels]()) // Boş liste dönüyoruz
+                return
+            }
+            
+            // Eğer geçerli bir JSON ise, çözümleme işlemi
+            do {
+                let getFoodBasket = try JSONDecoder().decode(FoodBasketAnswerModel.self, from: data)
+                if let basketFoodGet = getFoodBasket.sepet_yemekler, !basketFoodGet.isEmpty {
+                    self.foodBasket.onNext(basketFoodGet) // Sepet yemekleri varsa gönder
+                } else {
+                    print("Sepet boş")
+                    self.foodBasket.onNext([FoodBasketModels]()) // Sepet boşsa boş liste dönüyoruz
+                }
+            } catch {
+                print("Sepetteki yemekler getirilemedi")
+                print("JSON Decode Error: \(error.localizedDescription)")
+                self.foodBasket.onNext([FoodBasketModels]()) // Hata durumunda boş liste dönüyoruz
+            }
+        }
+    }
+    
+    
+    func foodsBasketDelete(sepet_yemek_id:Int, kullanici_adi:String) {
+        let parametre:Parameters = ["sepet_yemek_id":sepet_yemek_id, "kullanici_adi":kullanici_adi]
+        
+        AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php", method: .post, parameters: parametre).response {response in
             if let data = response.data {
-                print("Raw JSON Response: \(String(data: data, encoding: .utf8) ?? "No Data")")
                 do {
-                    let getFoodBasket = try JSONDecoder().decode(FoodBasketAnswerModel.self, from: data)
-                    if let basketFoodGet = getFoodBasket.sepet_yemekler {
-                            self.foodBasket.onNext(basketFoodGet)
-                        } else {
-                            print("Sepet Boş")
-                        }
+                    let deleteFood = try JSONDecoder().decode(FoodBasketAnswerModel.self, from: data)
+                    self.foodsBasketGet(kullanici_adi: "berk_canpolat")
                 } catch {
-                    print("Sepetteki yemekler getirilemedi")
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
         }

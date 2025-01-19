@@ -114,7 +114,7 @@ class DetailsPage: UIViewController {
         
         let alertOkButton = UIAlertAction(title: "Ok", style: .default) { _ in
             if let f = self.foods {
-                self.detailsViewModel.foodAddBasketViewModelFunction(yemek_adi: f.yemek_adi ?? "", yemek_resim_adi: f.yemek_resim_adi ?? "", yemek_fiyat: Int(f.yemek_fiyat ?? "") ?? 0, yemek_siparis_adet: quantity, kullanici_adi: "he")
+                self.detailsViewModel.foodAddBasketViewModelFunction(yemek_adi: f.yemek_adi ?? "", yemek_resim_adi: f.yemek_resim_adi ?? "", yemek_fiyat: Int(f.yemek_fiyat ?? "") ?? 0, yemek_siparis_adet: quantity, kullanici_adi: "berk_canpolat")
             }
             
             let alertControllerTwo = UIAlertController(title: "Sepete Eklendi!", message: "Ürününüz sepete eklenmiştir. Lütfen sepetinizi kontrol edin.", preferredStyle: .alert)

@@ -15,11 +15,15 @@ class ShoppingCardViewModel {
     
     init() {
         foodAddBasketViewModelList = foodRepo.foodBasket
-        foodBasketGetViewModel(kullanici_adi: "he")
+        foodBasketGetViewModel(kullanici_adi: "berk_canpolat")
     }
     
     func foodBasketGetViewModel(kullanici_adi:String) {
         foodRepo.foodsBasketGet(kullanici_adi: kullanici_adi)
+    }
+    
+    func foodBasketDeleteViewModel(sepet_yemek_id:Int,kullanici_adi:String) {
+        foodRepo.foodsBasketDelete(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi)
     }
     
 }

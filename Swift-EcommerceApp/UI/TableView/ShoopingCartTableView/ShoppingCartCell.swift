@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol ProtocolFoodDelete {
+    func foodDeletePro(indexPath:IndexPath)
+}
+
 class ShoppingCartCell: UITableViewCell {
     
     
@@ -17,6 +21,9 @@ class ShoppingCartCell: UITableViewCell {
     @IBOutlet weak var foodQuantitiyLabel: UILabel!
     @IBOutlet weak var foodPriceLabel: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
+    
+    var tableViewPro:ProtocolFoodDelete?
+    var tableViewIndex:IndexPath?
     
     func setup(_ food:FoodBasketModels) {
         if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi)") {
@@ -65,6 +72,9 @@ class ShoppingCartCell: UITableViewCell {
     
     
     @IBAction func foodDeleteButton(_ sender: Any) {
+        if let controlIndex = tableViewIndex {
+            tableViewPro?.foodDeletePro(indexPath: controlIndex)
+        }
     }
     
     
