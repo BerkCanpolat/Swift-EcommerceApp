@@ -131,7 +131,7 @@ class Homepage: UIViewController {
         if segue.identifier == "detailsPage" {
             if let indeks = sender as? Foods {
                 let gidilecekVC = segue.destination as! DetailsPage
-                gidilecekVC.deneme = indeks
+                gidilecekVC.foods = indeks
             }
         }
     }

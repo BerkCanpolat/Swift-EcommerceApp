@@ -6,27 +6,26 @@
 //
 
 import UIKit
+import RxSwift
 
 class DetailsPage: UIViewController {
     
-    var deneme:Foods?
-    var deneme2 = [Foods]()
+    var foods:Foods?
+    var foodBasket:FoodBasketModels?
+    var deneme = [FoodBasketModels]()
+    var foodsModel = [Foods]()
     
-    var deneme3 = HomePageViewModel()
+    var viewModel = HomePageViewModel()
+    var detailsViewModel = DetailsViewModel()
     
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
     
-    
     @IBOutlet weak var foodQuantitiyLabel: UILabel!
-    
     @IBOutlet weak var stepperOutlet: UIStepper!
-    
-    
     @IBOutlet weak var basketAction: UIButton!
-    
         
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -37,13 +36,15 @@ class DetailsPage: UIViewController {
     
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
     
+    private let disposeBage = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
 
-        if let f = deneme {
+        if let f = foods {
             self.navigationItem.title = "Ürün Detayları"
             if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(f.yemek_resim_adi ?? "ayran.png")") {
                 imageView.kf.setImage(with: img)
@@ -52,17 +53,25 @@ class DetailsPage: UIViewController {
             self.foodName.text = f.yemek_adi
         }
         
-        _ = deneme3.foodList.subscribe(onNext: { f in
-            self.deneme2 = f
+        /// HomeViewModel
+        _ = viewModel.foodList.subscribe(onNext: { f in
+            self.foodsModel = f
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            
-        })
+        }).disposed(by: disposeBage)
+        
+        /// DetailsViewModel
+        
         
         collectionView.collectionViewLayout = createCompositionalLayout()
         
         basketAction.tintColor = UIColor(named: "buttonBasket")
+        
+        stepperOutlet.minimumValue = 1 // Minimum sipariş adedi
+            stepperOutlet.maximumValue = 20 // Maksimum sipariş adedi
+            stepperOutlet.value = 1 // Varsayılan değer
+            foodQuantitiyLabel.text = "\(Int(stepperOutlet.value))" // Varsayılan olarak 1 gösterilir
         
     }
     
@@ -93,14 +102,20 @@ class DetailsPage: UIViewController {
     
     
     @IBAction func foodFavoriteButton(_ sender: Any) {
+        
     }
     
     
     @IBAction func foodAddBasketButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Sepete Eklensin Mi?", message: "\(deneme?.yemek_adi ?? "") - \(deneme?.yemek_fiyat ?? "")", preferredStyle: .alert)
+        print("Add to basket button tapped")
+        let quantity = Int(stepperOutlet.value) // Stepper'dan adet alınır
+            print("Seçilen adet: \(quantity)")
+        let alertController = UIAlertController(title: "Sepete Eklensin Mi?", message: "\(foods?.yemek_adi ?? "") - \(foods?.yemek_fiyat ?? "")", preferredStyle: .alert)
         
         let alertOkButton = UIAlertAction(title: "Ok", style: .default) { _ in
-            print("Ok basıldı")
+            if let f = self.foods {
+                self.detailsViewModel.foodAddBasketViewModelFunction(yemek_adi: f.yemek_adi ?? "", yemek_resim_adi: f.yemek_resim_adi ?? "", yemek_fiyat: Int(f.yemek_fiyat ?? "") ?? 0, yemek_siparis_adet: quantity, kullanici_adi: "he")
+            }
             
             let alertControllerTwo = UIAlertController(title: "Sepete Eklendi!", message: "Ürününüz sepete eklenmiştir. Lütfen sepetinizi kontrol edin.", preferredStyle: .alert)
             
@@ -132,12 +147,12 @@ class DetailsPage: UIViewController {
 
 extension DetailsPage: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return deneme2.count
+        return foodsModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCell
-        cell.setup(deneme2[indexPath.row])
+        cell.setup(foodsModel[indexPath.row])
         return cell
     }
     

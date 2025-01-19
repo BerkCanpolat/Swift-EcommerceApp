@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShoppingCartCell: UITableViewCell {
     
@@ -16,6 +17,15 @@ class ShoppingCartCell: UITableViewCell {
     @IBOutlet weak var foodQuantitiyLabel: UILabel!
     @IBOutlet weak var foodPriceLabel: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
+    
+    func setup(_ food:FoodBasketModels) {
+        if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi)") {
+            foodImage.kf.setImage(with: img)
+        }
+        foodName.text = food.yemek_adi
+        foodPriceLabel.text = "₺ \(food.yemek_fiyat)"
+        foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+    }
     
     
 
