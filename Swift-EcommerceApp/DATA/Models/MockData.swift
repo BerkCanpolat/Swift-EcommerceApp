@@ -13,18 +13,18 @@ struct MockData {
 }
 
 let mockLandingData = [
-    MockData(title: "Deneme 1 sadads asdas", image: "five"),
-    MockData(title: "Deneme 2", image: "three"),
-    MockData(title: "Deneme 3", image: "four"),
-    MockData(title: "Deneme 4", image: "two"),
-    MockData(title: "Deneme 5", image: "one")
+    MockData(title: "Delicious Pizzas 10% discounts are waiting for you!", image: "five"),
+    MockData(title: "Pizzas with different flavours", image: "three"),
+    MockData(title: "20% discount on soup varieties", image: "four"),
+    MockData(title: "Eat healthy with forest fruits!", image: "two"),
+    MockData(title: "Eat with pleasure with new fruit varieties!", image: "one")
 ]
 
 
 let mockCategoriesData = [
-    MockData(title: "Meyveler", image: "one"),
-    MockData(title: "Meyve Tabağı", image: "two"),
+    MockData(title: "Fruits", image: "one"),
+    MockData(title: "Fruits Plate", image: "two"),
     MockData(title: "Pizza", image: "three"),
-    MockData(title: "Çorba", image: "four"),
+    MockData(title: "Soup", image: "four"),
     MockData(title: "All", image: "Category")
 ]

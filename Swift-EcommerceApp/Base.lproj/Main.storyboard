@@ -55,11 +55,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YD-uh-5sv">
-                                                    <rect key="frame" x="25" y="47.333333333333336" width="120" height="27.666666666666664"/>
+                                                    <rect key="frame" x="25" y="42.333333333333336" width="150" height="24.000000000000007"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="e9C-Yj-vM4"/>
+                                                        <constraint firstAttribute="width" constant="150" id="e9C-Yj-vM4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -67,7 +67,7 @@
                                             <constraints>
                                                 <constraint firstItem="G7G-NF-jlH" firstAttribute="top" secondItem="4xA-Yt-IgG" secondAttribute="top" constant="12" id="FwI-zV-UrD"/>
                                                 <constraint firstAttribute="trailing" secondItem="G7G-NF-jlH" secondAttribute="trailing" constant="2.3300000000000001" id="Waz-n2-LAI"/>
-                                                <constraint firstItem="3YD-uh-5sv" firstAttribute="top" secondItem="RQ8-QV-T9u" secondAttribute="bottom" constant="15" id="c10-fb-w63"/>
+                                                <constraint firstItem="3YD-uh-5sv" firstAttribute="top" secondItem="RQ8-QV-T9u" secondAttribute="bottom" constant="10" id="c10-fb-w63"/>
                                                 <constraint firstItem="RQ8-QV-T9u" firstAttribute="leading" secondItem="4xA-Yt-IgG" secondAttribute="leading" constant="25" id="eUj-EV-pCp"/>
                                                 <constraint firstItem="RQ8-QV-T9u" firstAttribute="top" secondItem="4xA-Yt-IgG" secondAttribute="top" constant="18" id="iyk-Wc-nwn"/>
                                                 <constraint firstAttribute="bottom" secondItem="G7G-NF-jlH" secondAttribute="bottom" constant="12" id="pUS-Hg-DYQ"/>
@@ -491,7 +491,7 @@
             </objects>
             <point key="canvasLocation" x="2450" y="-1706"/>
         </scene>
-        <!--Details Page-->
+        <!--Product Details-->
         <scene sceneID="VM7-I1-ovZ">
             <objects>
                 <viewController id="QwF-uB-g2J" customClass="DetailsPage" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -534,7 +534,9 @@
                                                     <constraint firstAttribute="width" constant="75" id="zHI-gc-4ZJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" image="Heart"/>
+                                                <buttonConfiguration key="configuration" style="gray" image="Heart">
+                                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layerCornerRadius">
                                                         <integer key="value" value="50"/>
@@ -642,8 +644,8 @@
                                                     <constraint firstAttribute="width" constant="9" id="mZZ-uT-KUb"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tavsiye Edilenler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGq-MX-SVM">
-                                                <rect key="frame" x="10" y="550.33333333333337" width="126" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGq-MX-SVM">
+                                                <rect key="frame" x="9.9999999999999929" y="550.33333333333337" width="115.33333333333331" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -696,9 +698,9 @@
                                                 </connections>
                                             </stepper>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrV-65-fiN">
-                                                <rect key="frame" x="10" y="631" width="114" height="35"/>
+                                                <rect key="frame" x="10.000000000000007" y="631" width="108.66666666666669" height="35"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Sepete Ekle"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add to cart"/>
                                                 <connections>
                                                     <action selector="foodAddBasketButton:" destination="QwF-uB-g2J" eventType="touchUpInside" id="xRG-GN-MjS"/>
                                                 </connections>
@@ -797,7 +799,7 @@
                             <constraint firstItem="89U-ra-WJg" firstAttribute="top" secondItem="19h-ZK-E5v" secondAttribute="top" id="IdR-W2-6Y1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="k4G-Fw-5j1">
+                    <navigationItem key="navigationItem" title="Product Details" id="k4G-Fw-5j1">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Buy" id="Agl-5f-YQl">
                             <connections>
                                 <segue destination="w9j-Xk-b3c" kind="show" id="Rv4-Hv-kNg"/>
@@ -819,7 +821,7 @@
             </objects>
             <point key="canvasLocation" x="2449.6183206106871" y="-1035.2112676056338"/>
         </scene>
-        <!--My Basket-->
+        <!--My Cart-->
         <scene sceneID="zTm-1K-nOC">
             <objects>
                 <viewController id="w9j-Xk-b3c" customClass="ShoppingCartPage" customModule="Swift_EcommerceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -919,7 +921,7 @@
                                                     <color key="textColor" red="0.51024729940000002" green="0.51163738219999999" blue="0.53284985809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21O-PL-vyK">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21O-PL-vyK">
                                                     <rect key="frame" x="248" y="55" width="24" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="24" id="aQL-Uy-rLP"/>
@@ -932,14 +934,8 @@
                                                         <action selector="foodMinusButton:" destination="fRE-94-pZC" eventType="touchUpInside" id="nde-cg-NDc"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCg-6h-2Qr">
-                                                    <rect key="frame" x="280" y="55" width="9" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-NG-u61">
-                                                    <rect key="frame" x="297" y="55" width="24" height="17"/>
+                                                    <rect key="frame" x="273" y="55" width="24" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="1b0-bn-aKn"/>
                                                         <constraint firstAttribute="width" constant="24" id="eq2-ZT-Suf"/>
@@ -964,7 +960,7 @@
                                                         <action selector="foodDeleteButton:" destination="fRE-94-pZC" eventType="touchUpInside" id="grG-WM-WkX"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ 1999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-Tx-HTr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 1999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-Tx-HTr">
                                                     <rect key="frame" x="126.66666666666669" y="59" width="66" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -972,7 +968,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bCg-6h-2Qr" firstAttribute="leading" secondItem="21O-PL-vyK" secondAttribute="trailing" constant="8" id="2JB-ad-tqQ"/>
                                                 <constraint firstItem="OIK-lW-bcK" firstAttribute="leading" secondItem="Een-22-19M" secondAttribute="trailing" constant="12" id="5tT-UO-H2y"/>
                                                 <constraint firstItem="OIK-lW-bcK" firstAttribute="top" secondItem="W4C-uH-Yp0" secondAttribute="topMargin" id="7tk-3V-iQr"/>
                                                 <constraint firstItem="8pd-Tx-HTr" firstAttribute="top" secondItem="QZK-Te-eGE" secondAttribute="bottom" constant="14" id="CB2-LB-Vwr"/>
@@ -982,14 +977,12 @@
                                                 <constraint firstItem="XlG-Og-14X" firstAttribute="leading" secondItem="OIK-lW-bcK" secondAttribute="trailing" constant="10" id="Kre-bh-0WT"/>
                                                 <constraint firstItem="21O-PL-vyK" firstAttribute="leading" secondItem="8pd-Tx-HTr" secondAttribute="trailing" constant="55.329999999999998" id="NkQ-Sw-7WQ"/>
                                                 <constraint firstItem="XlG-Og-14X" firstAttribute="top" secondItem="W4C-uH-Yp0" secondAttribute="topMargin" id="O2g-Nd-pSF"/>
-                                                <constraint firstItem="Rua-NG-u61" firstAttribute="leading" secondItem="bCg-6h-2Qr" secondAttribute="trailing" constant="8" id="QaU-xg-faW"/>
                                                 <constraint firstItem="btz-3Y-lkw" firstAttribute="top" secondItem="W4C-uH-Yp0" secondAttribute="topMargin" constant="44" id="Uh1-lf-aE2"/>
                                                 <constraint firstItem="QZK-Te-eGE" firstAttribute="leading" secondItem="OIK-lW-bcK" secondAttribute="trailing" constant="10" id="aKm-oL-9MD"/>
                                                 <constraint firstItem="21O-PL-vyK" firstAttribute="top" secondItem="XlG-Og-14X" secondAttribute="bottom" constant="27" id="bdf-Cr-hIz"/>
                                                 <constraint firstItem="8pd-Tx-HTr" firstAttribute="leading" secondItem="OIK-lW-bcK" secondAttribute="trailing" constant="10" id="f0U-bu-emO"/>
                                                 <constraint firstItem="Een-22-19M" firstAttribute="leading" secondItem="W4C-uH-Yp0" secondAttribute="leadingMargin" id="gVI-Dw-krg"/>
-                                                <constraint firstItem="bCg-6h-2Qr" firstAttribute="top" secondItem="W4C-uH-Yp0" secondAttribute="topMargin" constant="44" id="hwa-Go-GEI"/>
-                                                <constraint firstItem="btz-3Y-lkw" firstAttribute="leading" secondItem="Rua-NG-u61" secondAttribute="trailing" constant="16" id="pdp-nS-2d6"/>
+                                                <constraint firstItem="btz-3Y-lkw" firstAttribute="leading" secondItem="Rua-NG-u61" secondAttribute="trailing" constant="40" id="pdp-nS-2d6"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8pd-Tx-HTr" secondAttribute="bottom" constant="42" id="qUz-9k-hd0"/>
                                                 <constraint firstItem="QZK-Te-eGE" firstAttribute="top" secondItem="XlG-Og-14X" secondAttribute="bottom" constant="3" id="t8L-4c-Xpw"/>
                                             </constraints>
@@ -1027,7 +1020,7 @@
                             <constraint firstItem="DsF-CJ-81Z" firstAttribute="top" secondItem="29S-xE-tv8" secondAttribute="bottom" id="wdb-pE-rzE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Basket" id="OUU-8P-ZQx">
+                    <navigationItem key="navigationItem" title="My Cart" id="OUU-8P-ZQx">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Buy" id="oHH-v6-Ln8"/>
                     </navigationItem>
                     <connections>

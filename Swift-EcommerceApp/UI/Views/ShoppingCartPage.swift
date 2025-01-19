@@ -73,7 +73,7 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, Protocol
                 
                 // Yeni adet değerini UI'ya yansıtalım
                 if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
-                    cell.foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+                    cell.foodQuantitiyLabel.text = "Quantity: \(food.yemek_siparis_adet)"
                 }
                 
                 // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)
@@ -100,7 +100,7 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, Protocol
                 
                 // Yeni adet değerini UI'ya yansıtalım
                 if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
-                    cell.foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+                    cell.foodQuantitiyLabel.text = "Quantity: \(food.yemek_siparis_adet)"
                 }
                 
                 // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)

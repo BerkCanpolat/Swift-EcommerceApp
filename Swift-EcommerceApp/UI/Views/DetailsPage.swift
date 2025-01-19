@@ -45,7 +45,7 @@ class DetailsPage: UIViewController {
         
 
         if let f = foods {
-            self.navigationItem.title = "Ürün Detayları"
+            self.navigationItem.title = "Product Details"
             if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(f.yemek_resim_adi ?? "ayran.png")") {
                 imageView.kf.setImage(with: img)
             }
@@ -108,17 +108,17 @@ class DetailsPage: UIViewController {
     
     @IBAction func foodAddBasketButton(_ sender: Any) {
         print("Add to basket button tapped")
-        let quantity = Int(stepperOutlet.value) // Stepper'dan adet alınır
+        let quantity = Int(stepperOutlet.value)
             print("Seçilen adet: \(quantity)")
         
-        let alertController = UIAlertController(title: "Sepete Eklensin Mi?", message: "\(foods?.yemek_adi ?? "") - \(foods?.yemek_fiyat ?? "")", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add to cart?", message: "\(foods?.yemek_adi ?? "") - \(foods?.yemek_fiyat ?? "")", preferredStyle: .alert)
         
         let alertOkButton = UIAlertAction(title: "Ok", style: .default) { _ in
             if let f = self.foods {
                 self.detailsViewModel.foodAddBasketViewModelFunction(yemek_adi: f.yemek_adi ?? "", yemek_resim_adi: f.yemek_resim_adi ?? "", yemek_fiyat: Int(f.yemek_fiyat ?? "") ?? 0, yemek_siparis_adet: quantity, kullanici_adi: "berk_canpolat")
             }
             
-            let alertControllerTwo = UIAlertController(title: "Sepete Eklendi!", message: "Ürününüz sepete eklenmiştir. Lütfen sepetinizi kontrol edin.", preferredStyle: .alert)
+            let alertControllerTwo = UIAlertController(title: "Added to cart!", message: "Your product has been added to the basket. Please check your basket.", preferredStyle: .alert)
             
             let alertOKBasketButton = UIAlertAction(title: "OK", style: .destructive) {_ in
             }

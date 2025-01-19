@@ -1,0 +1,177 @@
+
+/* Class = "UILabel"; text = "Ayran"; ObjectID = "0Wb-xO-DS4"; */
+"0Wb-xO-DS4.text" = "Ayran";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "17E-l8-cTG"; */
+"17E-l8-cTG.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "21O-PL-vyK"; */
+"21O-PL-vyK.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label "; ObjectID = "3YD-uh-5sv"; */
+"3YD-uh-5sv.text" = "Label ";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "4RL-CJ-dUK"; */
+"4RL-CJ-dUK.title" = "Home";
+
+/* Class = "UILabel"; text = "Ronald Richards"; ObjectID = "55S-el-yXg"; */
+"55S-el-yXg.text" = "Ronald Richards";
+
+/* Class = "UILabel"; text = "Reviews"; ObjectID = "6CN-Zm-pEp"; */
+"6CN-Zm-pEp.text" = "Reviews";
+
+/* Class = "UILabel"; text = "Delivery to"; ObjectID = "8A1-FG-3X0"; */
+"8A1-FG-3X0.text" = "Delivery to";
+
+/* Class = "UILabel"; text = "⏲ 13 sep, 2020"; ObjectID = "8M8-cn-ev9"; */
+"8M8-cn-ev9.text" = "⏲ 13 sep, 2020";
+
+/* Class = "UILabel"; text = "⏲ 13 sep, 2020"; ObjectID = "8RW-fy-r2a"; */
+"8RW-fy-r2a.text" = "⏲ 13 sep, 2020";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8mm-UC-Hdv"; */
+"8mm-UC-Hdv.text" = "Label";
+
+/* Class = "UILabel"; text = "$ 1999.99"; ObjectID = "8pd-Tx-HTr"; */
+"8pd-Tx-HTr.text" = "$ 1999.99";
+
+/* Class = "UILabel"; text = "4.9"; ObjectID = "9Cn-xi-cb3"; */
+"9Cn-xi-cb3.text" = "4.9";
+
+/* Class = "UILabel"; text = "rating"; ObjectID = "A58-wE-ClU"; */
+"A58-wE-ClU.text" = "rating";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Agl-5f-YQl"; */
+"Agl-5f-YQl.title" = "Item";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "AxI-Wt-jUj"; */
+"AxI-Wt-jUj.text" = "4.8";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "BDP-o3-RBq"; */
+"BDP-o3-RBq.text" = "4.8";
+
+/* Class = "UILabel"; text = "Ankara City, Central Turkey ˅"; ObjectID = "BKL-DZ-LUh"; */
+"BKL-DZ-LUh.text" = "Ankara City, Central Turkey ˅";
+
+/* Class = "UILabel"; text = "Salatiga City, Central Java"; ObjectID = "CB2-QS-LzM"; */
+"CB2-QS-LzM.text" = "Salatiga City, Central Java";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque male"; ObjectID = "DiF-ac-2mZ"; */
+"DiF-ac-2mZ.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque male";
+
+/* Class = "UIButton"; configuration.title = "Add to cart"; ObjectID = "DrV-65-fiN"; */
+"DrV-65-fiN.configuration.title" = "Add to cart";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DrV-65-fiN"; */
+"DrV-65-fiN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "MNk-L2-OyT"; */
+"MNk-L2-OyT.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NYZ-Io-5bA"; */
+"NYZ-Io-5bA.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "My Cart"; ObjectID = "OUU-8P-ZQx"; */
+"OUU-8P-ZQx.title" = "My Cart";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "P7X-Ah-l10"; */
+"P7X-Ah-l10.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Select Payment Method"; ObjectID = "Q3P-5y-JDi"; */
+"Q3P-5y-JDi.configuration.title" = "Select Payment Method";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Q3P-5y-JDi"; */
+"Q3P-5y-JDi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Variant: Grey"; ObjectID = "QZK-Te-eGE"; */
+"QZK-Te-eGE.text" = "Variant: Grey";
+
+/* Class = "UILabel"; text = "SALE"; ObjectID = "RQ8-QV-T9u"; */
+"RQ8-QV-T9u.text" = "SALE";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rua-NG-u61"; */
+"Rua-NG-u61.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Recommended"; ObjectID = "SGq-MX-SVM"; */
+"SGq-MX-SVM.text" = "Recommended";
+
+/* Class = "UILabel"; text = "Totals"; ObjectID = "TvA-X5-Ili"; */
+"TvA-X5-Ili.text" = "Totals";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque male"; ObjectID = "Upx-z6-xtP"; */
+"Upx-z6-xtP.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque male";
+
+/* Class = "UILabel"; text = "Airpods max by apple"; ObjectID = "XlG-Og-14X"; */
+"XlG-Og-14X.text" = "Airpods max by apple";
+
+/* Class = "UILabel"; text = "Delivery Adress"; ObjectID = "bep-pp-r2C"; */
+"bep-pp-r2C.text" = "Delivery Adress";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "blf-hA-6Ya"; */
+"blf-hA-6Ya.text" = "Description";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "btz-3Y-lkw"; */
+"btz-3Y-lkw.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cwk-Od-ztF"; */
+"cwk-Od-ztF.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae  orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae  amet..."; ObjectID = "czO-KH-Gdr"; */
+"czO-KH-Gdr.text" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae  orem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae  amet...";
+
+/* Class = "UIButton"; configuration.title = "View All"; ObjectID = "hDZ-Ox-pMw"; */
+"hDZ-Ox-pMw.configuration.title" = "View All";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hDZ-Ox-pMw"; */
+"hDZ-Ox-pMw.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "4.8"; ObjectID = "iRl-tW-S8a"; */
+"iRl-tW-S8a.text" = "4.8";
+
+/* Class = "UILabel"; text = "10 Review"; ObjectID = "iVh-FX-6Em"; */
+"iVh-FX-6Em.text" = "10 Review";
+
+/* Class = "UILabel"; text = "$ 00,0"; ObjectID = "jr2-zV-hIy"; */
+"jr2-zV-hIy.text" = "$ 00,0";
+
+/* Class = "UINavigationItem"; title = "Product Details"; ObjectID = "k4G-Fw-5j1"; */
+"k4G-Fw-5j1.title" = "Product Details";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kHe-gq-cjD"; */
+"kHe-gq-cjD.text" = "Label";
+
+/* Class = "UILabel"; text = "$ 16.99 (219 people buy this)"; ObjectID = "kx7-Xg-tWO"; */
+"kx7-Xg-tWO.text" = "$ 16.99 (219 people buy this)";
+
+/* Class = "UIButton"; configuration.title = "Add Review"; ObjectID = "m3c-Rg-cTd"; */
+"m3c-Rg-cTd.configuration.title" = "Add Review";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "m3c-Rg-cTd"; */
+"m3c-Rg-cTd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ronald Richards"; ObjectID = "m5Y-Uo-kXU"; */
+"m5Y-Uo-kXU.text" = "Ronald Richards";
+
+/* Class = "UITabBarItem"; title = "Wishlist"; ObjectID = "mXb-j8-Juj"; */
+"mXb-j8-Juj.title" = "Wishlist";
+
+/* Class = "UILabel"; text = "Brown Jacket"; ObjectID = "mt6-QF-f2D"; */
+"mt6-QF-f2D.text" = "Brown Jacket";
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "nH6-a7-opY"; */
+"nH6-a7-opY.title" = "Account";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "oHH-v6-Ln8"; */
+"oHH-v6-Ln8.title" = "Item";
+
+/* Class = "UILabel"; text = "rating"; ObjectID = "oqY-bc-Zqx"; */
+"oqY-bc-Zqx.text" = "rating";
+
+/* Class = "UIBarButtonItem"; title = "Select Payment Method"; ObjectID = "pCS-Ng-19l"; */
+"pCS-Ng-19l.title" = "Select Payment Method";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "tes-A6-e4J"; */
+"tes-A6-e4J.title" = "History";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "x3a-MD-aa7"; */
+"x3a-MD-aa7.title" = "Item";

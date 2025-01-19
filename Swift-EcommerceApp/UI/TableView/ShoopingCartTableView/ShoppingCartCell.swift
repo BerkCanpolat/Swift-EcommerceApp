@@ -35,7 +35,7 @@ class ShoppingCartCell: UITableViewCell {
         }
         foodName.text = food.yemek_adi
         foodPriceLabel.text = "₺ \(food.yemek_fiyat)"
-        foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+        foodQuantitiyLabel.text = "Quantity: \(food.yemek_siparis_adet)"
     }
     
     

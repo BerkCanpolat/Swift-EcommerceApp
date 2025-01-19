@@ -18,6 +18,7 @@ class ProdCollectionCell: UICollectionViewCell {
     func setup (_ item:Foods) {
         if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(item.yemek_resim_adi ?? "ayran.png")") {
             imageView.kf.setImage(with: img)
+            
         }
         prodName.text = item.yemek_adi
         prodPrice.text = "₺ \(item.yemek_fiyat ?? "")"

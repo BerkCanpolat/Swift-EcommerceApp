@@ -143,19 +143,19 @@ class Homepage: UIViewController {
 
 extension Homepage: UICollectionViewDelegate, UICollectionViewDataSource, FiltersReusableProtocol {
     func filtersFunction(index: IndexPath) {
-        let alertController = UIAlertController(title: "Filters Options", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Filter Options", message: nil, preferredStyle: .actionSheet)
         
-        let alertPriceSort = UIAlertAction(title: "Fiyata Göre Sırala", style: .default) { _ in
+        let alertPriceSort = UIAlertAction(title: "Sort By Price", style: .default) { _ in
             self.sortFoodsByPrice()
             self.collectionView.reloadData()
         }
         
-        let alphabeticSort = UIAlertAction(title: "Alfabeye Göre Sırala", style: .default) { _ in
+        let alphabeticSort = UIAlertAction(title: "Sort by Alphabet", style: .default) { _ in
             self.sortFoodsAlphabetically()
             self.collectionView.reloadData()
         }
         
-        let alertCancel = UIAlertAction(title: "İptal", style: .cancel, handler: nil)
+        let alertCancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
         alertController.addAction(alertPriceSort)
         alertController.addAction(alphabeticSort)
