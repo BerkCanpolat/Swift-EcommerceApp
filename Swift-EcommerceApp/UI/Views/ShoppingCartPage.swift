@@ -34,6 +34,7 @@ class ShoppingCartPage: UIViewController {
             self.foodBasketModel = getBasket
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.updateTotalPrice()
             }
         }).disposed(by: disposeBag)
         
@@ -41,12 +42,80 @@ class ShoppingCartPage: UIViewController {
     
     @IBAction func selectPaymentMethodButton(_ sender: UIButton) {
     }
+    
+    func updateTotalPrice() {
+        var totalPrice: Double = 0
+        
+        // Sepetteki her ürün için fiyat ve adet bilgilerini alarak toplamı hesapla
+        for food in foodBasketModel {
+            if let price = Double(food.yemek_fiyat), let quantity = Int(food.yemek_siparis_adet) {
+                totalPrice += price * Double(quantity)
+            }
+        }
+        
+        // Toplam fiyatı UI'ya yansıt
+        foodTotalPriceLabel.text = "₺ \(String(format: "%.2f", totalPrice))"
+    }
+
 
 }
 
 extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, ProtocolFoodDelete {
+    func foodQuantitiyPlusPro(indexPath: IndexPath, quantity: Int) {
+        print("Plus Basıldı")
+            
+            // Sepetteki ürünü buluyoruz
+            let food = foodBasketModel[indexPath.row]
+            
+            // Yemek adedi String olduğundan, önce Int'e dönüştürmeliyiz
+            if let adet = Int(food.yemek_siparis_adet) {
+                food.yemek_siparis_adet = "\(adet + 1)" // Adedi 1 arttır
+                
+                // Yeni adet değerini UI'ya yansıtalım
+                if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
+                    cell.foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+                }
+                
+                // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)
+                foodBasketModel[indexPath.row] = food
+                
+                // Sepet verisini güncellemek için backend'e veya ViewModel'e bildirim gönder
+                if let yeniAdet = Int(food.yemek_siparis_adet) {
+                    shoppingViewModel.updateFoodQuantityInBasket(sepet_yemek_id: Int(food.sepet_yemek_id) ?? 0, yeni_adet: yeniAdet)
+                }
+                
+                updateTotalPrice()
+            }
+    }
+    
+    func foodQuantitiyMinusPro(indexPath: IndexPath, quantity: Int) {
+        print("Minus Basıldı")
+            
+            // Sepetteki ürünü buluyoruz
+            let food = foodBasketModel[indexPath.row]
+            
+            // Yemek adedi String olduğundan, önce Int'e dönüştürmeliyiz
+            if let adet = Int(food.yemek_siparis_adet), adet > 1 {
+                food.yemek_siparis_adet = "\(adet - 1)" // Adedi 1 azalt
+                
+                // Yeni adet değerini UI'ya yansıtalım
+                if let cell = tableView.cellForRow(at: indexPath) as? ShoppingCartCell {
+                    cell.foodQuantitiyLabel.text = "Adet: \(food.yemek_siparis_adet)"
+                }
+                
+                // Veri modelinde güncelleme yapıyoruz (foodBasketModel'ı)
+                foodBasketModel[indexPath.row] = food
+                
+                // Sepet verisini güncellemek için backend'e veya ViewModel'e bildirim gönder
+                if let yeniAdet = Int(food.yemek_siparis_adet) {
+                    shoppingViewModel.updateFoodQuantityInBasket(sepet_yemek_id: Int(food.sepet_yemek_id) ?? 0, yeni_adet: yeniAdet)
+                }
+                updateTotalPrice()
+            }
+    }
+    
     func foodDeletePro(indexPath: IndexPath) {
-        print("Basıldı")
+        print("Delete Basıldı")
         let foodIndex = foodBasketModel[indexPath.row]
         shoppingViewModel.foodBasketDeleteViewModel(sepet_yemek_id: Int(foodIndex.sepet_yemek_id) ?? 0, kullanici_adi: "berk_canpolat")
     }
@@ -66,6 +135,8 @@ extension ShoppingCartPage: UITableViewDelegate, UITableViewDataSource, Protocol
         
         cell.tableViewIndex = indexPath
         cell.tableViewPro = self
+        cell.tableViewMinus = 0
+        cell.tableViewPlus = 0
         return cell
     }
 }

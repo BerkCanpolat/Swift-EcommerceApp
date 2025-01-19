@@ -26,4 +26,11 @@ class ShoppingCardViewModel {
         foodRepo.foodsBasketDelete(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi)
     }
     
+    
+    func updateFoodQuantityInBasket(sepet_yemek_id: Int, yeni_adet: Int) {
+            // Arka planda veri güncelleme işlemi yapılacaksa buraya API çağrısı yapılabilir.
+            // Örnek: Sepet verilerini backend'e gönder
+            print("Sepetteki yemek id: \(sepet_yemek_id) yeni adet: \(yeni_adet)")
+        }
+    
 }

@@ -10,6 +10,8 @@ import Kingfisher
 
 protocol ProtocolFoodDelete {
     func foodDeletePro(indexPath:IndexPath)
+    func foodQuantitiyMinusPro(indexPath:IndexPath, quantity:Int)
+    func foodQuantitiyPlusPro(indexPath:IndexPath, quantity:Int)
 }
 
 class ShoppingCartCell: UITableViewCell {
@@ -24,6 +26,8 @@ class ShoppingCartCell: UITableViewCell {
     
     var tableViewPro:ProtocolFoodDelete?
     var tableViewIndex:IndexPath?
+    var tableViewMinus:Int?
+    var tableViewPlus:Int?
     
     func setup(_ food:FoodBasketModels) {
         if let img = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi)") {
@@ -65,9 +69,15 @@ class ShoppingCartCell: UITableViewCell {
     
     
     @IBAction func foodMinusButton(_ sender: Any) {
+        if let controlIndex = tableViewIndex, let tableViewMin = tableViewMinus {
+            tableViewPro?.foodQuantitiyMinusPro(indexPath: controlIndex, quantity: tableViewMin)
+        }
     }
     
     @IBAction func foodPlusButton(_ sender: Any) {
+        if let controlIndex = tableViewIndex, let tableViewPlus = tableViewPlus {
+            tableViewPro?.foodQuantitiyPlusPro(indexPath: controlIndex, quantity: tableViewPlus)
+        }
     }
     
     

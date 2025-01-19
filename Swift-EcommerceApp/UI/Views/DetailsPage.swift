@@ -110,6 +110,7 @@ class DetailsPage: UIViewController {
         print("Add to basket button tapped")
         let quantity = Int(stepperOutlet.value) // Stepper'dan adet alınır
             print("Seçilen adet: \(quantity)")
+        
         let alertController = UIAlertController(title: "Sepete Eklensin Mi?", message: "\(foods?.yemek_adi ?? "") - \(foods?.yemek_fiyat ?? "")", preferredStyle: .alert)
         
         let alertOkButton = UIAlertAction(title: "Ok", style: .default) { _ in
